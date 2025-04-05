@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %} 
+    <div>
+        Home Page
+    
+        <div>
+            <header>
+                Highlights Header      
+            </header>
+            
+            <section>
+                <h2>
+                    <a href="/articles/{{ article.slug}}/"
+                    >
+                        {{article.title}} - <small>{{article.contents}}</small>
+                </a>
+                </h2>
+            </section>
+
+            <footer>
+                Highlights Footer
+            </footer>
+
+        </div>
+        <div>
+            <header>
+                Articles Header
+            
+            <div>
+                <a href="{% url 'articles:create' %}"
+                >
+                    Create Article
+                </a>
+            </div>
+            <div>
+                 <a href="{% url 'articles:detail' article_slug='hello-world' %}"
+                >
+                    Hello World Detail
+                </a>
+            </div>
+
+           
+            </header>
+
+            <ul>
+                {% for x in articles %}
+                    {% if x.title %}
+                    <li>
+                        <a href="{{ x.get_absolute_url }}"
+                        >
+                            {{x.title}} - {{x.contents}}
+                        </a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <footer>
+                Articles Footer
+            </footer>
+        </div>
+    </div>
+{% endblock content %}
+   

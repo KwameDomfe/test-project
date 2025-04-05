@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <br>
+        <div>
+            <a href="/">
+                Home
+            </a>
+            <nav>
+                <a href="/info/">info</a>
+                <a href="/articles/">articles</a>
+                <a href="/accounts/login">accounts</a>
+            </nav>
+        </div>
+        <br>
+        <form 
+            method="GET"
+            action="/articles/"
+        >
+            <input 
+                type="text"
+                name="query"
+            >
+            <input 
+                type="submit" 
+                value="Search Articles"
+            >
+        </form>
+        <br>
+
+        <hr>
+        <br>
+    </header>
+    {% block content %} 
+        Content to be replaced
+    {% endblock content %} 
+</body>
+</html>

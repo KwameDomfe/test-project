@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %} 
+    <header>
+        Articles Search Header
+    </header>
+    
+    <ol>
+        {% for object in object_list %}
+            {% if object.title  %}
+                <li>
+                    <a
+                        href = {{object.get_absolute_url}}
+                    >
+                        <p>
+                            {{object.title}}
+                        </p>
+                        <p>{{object.user.username}}</p>
+                    </a>
+                    <hr>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+    <footer>
+        Articles Search Footer
+    </footer>
+{% endblock content %}
+   
+ 

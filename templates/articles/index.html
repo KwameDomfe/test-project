@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %} 
+    <header>
+        Articles Home Header
+    </header>
+
+    <ul>
+        {% for x in articles_object %}
+            {% if x.title %}
+                <li>
+                    <a
+                        href = '/articles/{{x.id}}/'
+                    >
+                        <h2>{{x.title}}</h2>
+                        <p>{{x.contents}}</p>
+                    </a>
+                    <hr>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <footer>
+        Articles Home Footer
+    </footer>
+{% endblock content %}
+   
+ 

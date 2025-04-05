@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %} 
+    <main>
+        <header >
+            <a href="/articles/">
+               back to Articles
+           </a>
+            <h2>{{articleObject.title}}</h2>
+        </header>
+        <hr>
+        <section>
+            <h2> 
+                {{articleObject.contents}}
+            </h2>
+        </section>
+    
+        <hr>
+    
+        <footer>
+            <h2>
+                {{articleObject.user}}
+            </h2>
+        </footer>
+    </main>
+{% endblock content %}
+   
+ 

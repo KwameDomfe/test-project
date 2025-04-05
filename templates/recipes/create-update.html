@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %} 
+    <header>
+        Edit Recipe Header
+    </header>
+    
+    <div>
+        {% if message %} 
+            <p>{{message}}</p>
+        {% endif %}
+
+        <div>
+            <form
+                method="POST"
+                action="."
+            >   {% csrf_token %}
+                
+                {{form.as_p }}
+                
+                {% if formset %}
+                    <h2>Ingredients</h2>
+                    {{formset.as_p }}
+                {% endif %}
+                <button 
+                    type="submit"
+                >
+                    Save
+                </button>
+
+            </form>
+        </div>
+    </div>
+        <footer>
+            Edit Recipe Footer
+        </footer>
+{% endblock content %}

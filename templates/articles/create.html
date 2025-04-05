@@ -1,0 +1,45 @@
+ {% extends "base.html" %}
+
+{% block content %} 
+    <header>
+        Create Article
+    </header>
+    
+    <div>
+        {% if not created %}
+            <div>
+                <form
+                    method="POST"
+                    action="."
+                >   {% csrf_token %}
+                    
+                    {{form.as_p }}
+                    
+                    <button 
+                        type="submit"
+                    >
+                        Create Article
+                    </button>
+
+                </form>
+            </div>
+        {% else %}
+            <div>
+                <p>
+                    Your article was created.
+                </p>
+                <a
+                href = '/articles/{{object.id}}/'
+                >
+                    <h2>{{object.title}}</h2>
+                    <p>{{object.contents}}</p>
+                </a>
+                <hr>
+            </div>
+        {% endif %}
+
+    </div>
+        <footer>
+            Create Footer
+        </footer>
+{% endblock content %}
