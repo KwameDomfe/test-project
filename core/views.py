@@ -4,7 +4,7 @@ import random
 # Create your views here.
 def Index(request):
     
-    random_id = random.randint (1,2)
+    random_id = random.randint (1,12)
     article_Object = Article.objects.get(id = random_id)
     my_list = [102, 23, 654,45,457]
     article_qs = Article.objects.all()

@@ -3,13 +3,16 @@
 {% block content %} 
     <main>
         <header >
+            <h2>
+                Article Detail Header
+            </h2>
             <a href="/articles/">
                back to Articles
            </a>
-            <h2>{{articleObject.title}}</h2>
         </header>
         <hr>
         <section>
+            <h2>{{articleObject.title}}</h2>
             <h2> 
                 {{articleObject.contents}}
             </h2>
@@ -19,7 +22,7 @@
     
         <footer>
             <h2>
-                {{articleObject.user}}
+                Article Detail Footer:{{articleObject.user}}
             </h2>
         </footer>
     </main>

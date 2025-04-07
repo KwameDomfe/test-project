@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %} 
     <div>
-        Home Page
     
         <header>
             Home Page Header
         </header>
-        <div>
+        <br>
+        <section>
             <header>
                 Highlights Header      
             </header>
@@ -24,27 +24,28 @@
                 Highlights Footer
             </footer>
 
-        </div>
+        </section>
+        <br>
         <div>
+            <br>
             <header>
                 Articles Header
-            
-            <div>
-                <a href="{% url 'articles:create' %}"
-                >
-                    Create Article
-                </a>
-            </div>
-            <div>
-                 <a href="{% url 'articles:detail' article_slug='hello-world' %}"
-                >
-                    Hello World Detail
-                </a>
-            </div>
-
-           
+                <div>
+                    <span>
+                    <a href="{% url 'articles:create' %}"
+                    >
+                        Create Article
+                    </a>
+                    </span> &nbsp; &nbsp;
+                    <span>
+                        <a href="{% url 'articles:detail' article_slug='hello-world' %}"
+                        >
+                            Hello World Detail
+                        </a>
+                    </span>
+                </div>
             </header>
-
+            <br>
             <ul>
                 {% for x in articles %}
                     {% if x.title %}
@@ -57,9 +58,11 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <br>
             <footer>
                 Articles Footer
             </footer>
+            <br>
         </div>
         <footer>
             HomePage Footer
